@@ -14,6 +14,8 @@ ADL_6
   -cd project-aws
   -sudo nano variables.tf
   -create key pair(.pem)
+
+variable.tf 
   -variable " aws_region" {
      description = "The AWS region to create things in."
      default "ap-south-1"
@@ -28,6 +30,8 @@ ADL_6
    }
   
   -sudo nano main.tf
+
+main.tf 
   -provider "aws" {
       region = var.aws_region
 }

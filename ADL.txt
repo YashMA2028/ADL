@@ -1,0 +1,21 @@
+-->Exp1
+   Cloud9,IAM User, Group
+-->Exp2
+   AWS Elastic Beanstalk , S3 Bucket , Codepipeline
+-->Exp5
+   Unzip , cd mv /usr/local/bin , -v
+-->Exp11
+   AWS lambda function
+-->Exp12
+   S3 , IAM(AmazonS3FullAccess, AWSLambdaFullAccess and CloudWatchFullAccess.)
+   Lambda add trigger .jpg
+   index.js
+   exports.handler function(event, context, callback) {
+   console.log("Incoming Event: event);
+   const bucket event.Records[0].s3.bucket.name;
+   const filename = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g,''));
+  const message An Image has been added ${bucket] -> ${filename}';
+  console.log(message);
+  callback(null, message);
+};
+ mag open cloudwatch to see logs

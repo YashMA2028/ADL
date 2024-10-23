@@ -8,11 +8,14 @@
 - sudo systemctl status Jenkins
 - sudo ufw allow
 - sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+the login Jenkins http://localhost:8080 
 - $docker run -d -p 9000:9000 SonarQube
 - SonarQube madhe aahe Administration> User > My Account > Security generate token
+
 - SonarQube Scanner and SonarQube Server insatll in Jenkins plugins
 - Manage Jenkins > Global Tool Configuration > SonarQube Scanner. Then, Click
 Add SonarQube Scanner Button.
+pipeline banvaychi 
 - node
   {
        stage('clonning from GIT'){

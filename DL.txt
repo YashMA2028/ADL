@@ -1,0 +1,176 @@
+DL 
+--> Exp2
+sudo apt update
+sudo su root
+sudo apt update
+apt install git
+git --version
+git config --global user.name "YashMA2028"
+git config --global user.email "yashapte2024@gmail.com"
+git config --list
+(Go to GitHub signin , public Repo ,README File)
+mkdir workspace
+cd workspace
+git init 
+git clone (Repo chi link)
+cd Repo
+touch hello.py
+gedit hello.py
+git status 
+git add hello.py
+git commit -m "First python file"
+git status
+git push origin main (Username and password takaycha)
+(generate token)
+git remote set-url origin https://token@github.com/YashMA2028/Repo_name
+git push origin main
+git log
+git show
+
+
+
+
+
+-->Exp3
+sudo su root
+(var jya folder la git init kela tasah ithe pan karaycha)
+mkdir workspace
+cd workspace
+git init 
+git clone (Repo chi link)
+ls 
+git branch feature
+git checkout feature
+git branch
+echo "hello this was added while in feature branch" >> hello.py
+cat hello.py 
+git status
+git add hello.py
+git status 
+git commit -m "added line in feature branch"
+git checkout main
+git merge feature
+git push -u origin main
+git remote set-url origin https://token@github.com/YashMA2028/Repo_name
+git push -u origin main
+git branch -d feature
+
+
+
+
+
+
+-->Exp4
+-sudo su root
+-sudo apt-get update
+-apt-get install openjdk-11-jdk
+-java --version
+-curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \ /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \ https://pkg.jenkins.io/debian-stable binary/ | sudo tee \ /etc/apt/sources.list.d/jenkins.list > /dev/null
+-sudo apt-get update
+-sudo apt-get install Jenkins
+-Jenkins --version
+-sudo systemctl start Jenkins.service
+-sudo ufw status
+-sudo ufw allow 8080
+-sudo ufw enable
+-sudo ufw status
+-(Jenkins la jaycha)http://127.0.0.1:8080
+-normal directory create kar -> gedit simple.java -> javac simple.java 
+  ->java simple
+-(GitHub repo create kar)
+-git init
+-git status
+-git add .
+-git config --global 
+-git commit -m ""
+-git remote add origin "GitHub repo link"
+-git push -u origin  master
+git remote set-url origin https://token@github.com/YashMA2028/Repo_name
+git push -u origin master
+
+Build Steps javac simple.java 
+            java simple
+
+
+
+
+-->Exp5
+find / -type f -name java (/usr/lib/jvm/java-11-openjdk-amd64/bin/java)
+(ti link java chya tab madhe paste karaychi Jenkins madhe)
+manage Jenkins -> tools -> JDK installation -> git -> Maven
+GitHub -> frestyle proj
+source code management -> https://github.com/subu123321/hello-world.git -> mas
+Build now
+Config -> build step -> Invoke top-level
+          build env -> maven_home -> clean compile package
+Build now
+/var/lib/Jenkins/workspace 
+cd proj_name
+ls
+cd webapp 
+ls
+Config -> post build -> files to arch **/*.war 
+Build now
+sudo su
+sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+cd
+cd /tmp
+curl-O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat- 9.0.93.tar.gz
+sudo mkdir /opt/tomcat
+sudo tar xzvf apache-tomcat-9.0.54.tar.gz -C /opt/tomcat --strip-components=1
+cd /opt/tomcat
+sudo chgrp -R tomcat /opt/tomcat
+sudo chmod -R g+r conf
+sudo chmod g+x conf
+cd..
+sudo chown -R sujata:sujata tomcat
+cd
+cd /opt/tomcat/conf
+vi server.xml (change port number)
+cd
+cd /opt/tomcat/conf
+vi tomcat-users.xml
+<role rolename="manager-gui"/>
+ <role rolename="manager-script"/>
+ <role rolename="manager-jmx"/>
+ <role rolename="manager-status"/>
+ <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+ <user username="deployer" password="deployer" roles="manager-script"/>
+ <user username="tomcat" password="s3cret" roles="manager-gui"/>
+cd
+cd /opt/tomcat/webapps/manager/META-INF
+vi contect.xml (sagla content delete karaycha)
+cd 
+cd /opt/tomcat/bin/
+./shutdown.sh
+./startup.sh
+Jenkins -> plugin -> deploy to container -> install without restart
+post build -> deploy war/ear -> **/*.war
+add container -> http://localhost:8090/ -> credentials Jenkins -> username pass
+Build now -> fail
+cd /opt/tomcat/webapps/manager/META-INF
+vi contect.xml  
+add the content
+/opt/tomcat/bin 
+./shutdown.sh
+./startup.sh
+
+
+
+
+
+
+
+-->Exp6
+manage Jenkins -> nodes -> new node -> agent2 -> permanent agent -> create 
+pwd (copy)
+sudo su root
+find / -type f -name java (/usr/lib/jvm/java-11/openjdk-amd64/bin/java
+Node - agent2 -> pwd wali directory -> env var -> path de java cha
+manage Jenkins security 50000 fixed
+sudo ufw allow 50000/tcp
+agent2 madhe connection cha commands astil tya taak
+mag create free style proj -> restrict where it can run -> label  agent2
+build step -> echo "hello , welcome to sessions on master slave architecture"
+go to agent2

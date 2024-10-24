@@ -1,0 +1,131 @@
+-->Exp6
+manage Jenkins -> nodes -> new node -> agent2 -> permanent agent -> create 
+pwd (copy)
+sudo su root
+find / -type f -name java (/usr/lib/jvm/java-11/openjdk-amd64/bin/java
+Node - agent2 -> pwd wali directory -> env var -> path de java cha
+manage Jenkins security 50000 fixed
+sudo ufw allow 50000/tcp
+agent2 madhe connection cha commands astil tya taak
+mag create free style proj -> restrict where it can run -> label  agent2
+build step -> echo "hello , welcome to sessions on master slave architecture"
+go to agent2
+
+
+
+
+
+
+
+
+-->Exp8
+sudo su 
+ek folder
+sudo sh get-docker.sh
+ls
+cat get-docker.sh
+docker -v
+docker login
+docker run -it ubuntu bash
+docker images
+docker pull MySQL
+docker ps 
+docker ps -a
+docker exec -it <container id> bash
+docker rm container-name
+docker pull mysql
+docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=strong_password -d MySQL
+ docker exec -it test-mysql bash
+MySQL -u root -p 
+SELECT 'hello-world'
+
+
+
+
+
+
+-->Exp9
+docker images 
+docker pull ngnix
+docker run --name webserver1 5ef
+docker ps -a
+sudo su 
+docker rm
+docker run -it -p 3031:80 server1 ngnix:latest bash
+2nd terminal -> docker ps -a
+cd /urs/share/ngnix/html
+ls
+mv index.html index.html_backup
+nano index.html
+apt install nano
+apt update
+nano index.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Login Page </title>
+<style>
+Body {
+ font-family: Calibri, Helvetica, sans-serif;
+ background-color: pink;
+}
+button {
+ background-color: #4CAF50;
+ width: 100%;
+ color: orange;
+ padding: 15px;
+ margin: 10px 0px;
+ border: none;
+ cursor: pointer;
+ }
+form {
+ border: 3px solid #f1f1f1;
+ }
+input[type=text], input[type=password] {
+ width: 100%;
+ margin: 8px 0;
+ padding: 12px 20px;
+ display: inline-block;
+ border: 2px solid green;
+ box-sizing: border-box;
+ }
+button:hover {
+ opacity: 0.7; 
+}
+ .cancelbtn {
+ width: auto;
+ padding: 10px 18px;
+ margin: 10px 5px;
+ }
+
+
+.container {
+ padding: 25px;
+ background-color: lightblue;
+ }
+</style>
+</head>
+<body>
+ <center> <h1> <b>Student Login Form Designed by Sujata Oak</b> </h1> </center>
+ <form>
+ <div class="container">
+ <label>Username : </label>
+ <input type="text" placeholder="Enter Username" name="username" required>
+ <label>Password : </label>
+ <input type="password" placeholder="Enter Password" name="password" required>
+ <button type="submit">Login</button>
+ <input type="checkbox" checked="checked"> Remember me
+ <button type="button" class="cancelbtn"> Cancel</button>
+ Forgot <a href="#"> password? </a>
+ </div>
+ </form>
+</body>
+</html> 
+service ngnix status
+service ngnix start
+localhost:3031
+stop kar image docker stop 595
+docker exec 595 service nginx start
+
+
